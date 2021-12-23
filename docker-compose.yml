@@ -1,0 +1,23 @@
+version: "3"
+
+services: 
+    backend:
+        build: 
+            context: ./backend/
+            dockerfile: dockerfile
+        ports: 
+            - 
+        restart: always
+        expose: 
+            - 
+    frontend:
+      build:
+        context: ./frontend/
+        dockerfile: dockerfile 
+      volumes:
+        - /app/node_modules
+        - ./:/app
+      ports:
+        -
+      stdin_open: true
+
